@@ -14,6 +14,8 @@ namespace AppWeb.Data
         {
         }
 
-        public DbSet<AppWeb.Models.Department> Department { get; set; }
+        public DbSet<Models.Department> Department { get; set; }
+        public DbSet<Models.Seller> Seller { get; set; }
+        public DbSet<Models.SalesRecord> SalesRecord { get; set; }
     }
 }
