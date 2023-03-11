@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using AppWeb.Services;
+using AppWeb.Models;
 
 namespace AppWeb.Controllers
 {
@@ -20,6 +21,19 @@ namespace AppWeb.Controllers
         {
             var list = _sellerService.FindAll();
             return View(list);
+        }
+
+        public IActionResult Create()
+        {
+            return View();
+        }
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public IActionResult Create(Seller obj)
+        {
+            _sellerService.Insert(obj);
+            return RedirectToAction(nameof(Index));
         }
     }
 }
