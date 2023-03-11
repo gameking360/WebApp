@@ -11,6 +11,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.EntityFrameworkCore;
 using AppWeb.Data;
+using AppWeb.Services;
 
 namespace AppWeb
 {
@@ -41,6 +42,7 @@ namespace AppWeb
                     builder.MigrationsAssembly("AppWeb")));
 
             services.AddScoped<SeedingService>();
+            services.AddScoped<SellerService>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
