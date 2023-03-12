@@ -76,7 +76,7 @@ namespace AppWeb.Controllers
             }
             catch(IntegrityExceptions e)
             {
-                return RedirectToAction(nameof(Error), new { message = e.Message });
+                return RedirectToAction(nameof(Error), new { message = "Can't delete seller because he/she has sales" });
             }
             
         }
