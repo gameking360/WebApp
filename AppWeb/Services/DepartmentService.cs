@@ -4,6 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using AppWeb.Data;
 using AppWeb.Models;
+using Microsoft.EntityFrameworkCore;
 
 namespace AppWeb.Services
 {
@@ -16,9 +17,9 @@ namespace AppWeb.Services
             _context = context;
         }
 
-        public List<Department> FindAll()
+        public async Task<List<Department>> FindAllAsync()
         {
-            return _context.Department.OrderBy(p => p.Name).ToList();
+            return await _context.Department.OrderBy(p => p.Name).ToListAsync();
         }
     }
 }

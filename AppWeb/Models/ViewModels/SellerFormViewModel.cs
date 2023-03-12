@@ -3,7 +3,7 @@
 
 namespace AppWeb.Models.ViewModels
 {
-    public class SellerFormViewModel
+    public class SellerFormViewModel    
     {
         public Seller Seller { get; set; }
         public ICollection<Department> Departments { get; set; }
